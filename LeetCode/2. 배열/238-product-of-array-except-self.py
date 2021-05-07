@@ -18,3 +18,5 @@ class Solution:
         for i in range(len(nums)-1, 0):
             result[i] *= product
             product *= nums[i]
+
+        return result
