@@ -2,6 +2,7 @@
 
 # Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
 from collections import defaultdict
+from typing import List
 
 
 class Solution:
@@ -16,7 +17,8 @@ class Solution:
 
         while left < right:
             # 투포인터가 위치한 곳의 수면 측정
-            left_max, right_max = max(height[left], left_max), max(height[right], right_max)
+            left_max, right_max = max(height[left], left_max), max(
+                height[right], right_max)
 
             # 더 높은 쪽을 향해 투포인터 이동
             # left와 right 중 수면이 더 낮은 곳의 물 부피 구하기

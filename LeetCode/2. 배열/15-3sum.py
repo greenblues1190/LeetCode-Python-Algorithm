@@ -4,6 +4,9 @@
 
 # Notice that the solution set must not contain duplicate triplets.
 
+from typing import List
+
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         result = []
@@ -14,7 +17,7 @@ class Solution:
             # 중복 값 건너뛰기
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            
+
             complement = -1 * nums[i]
 
             # 투포인터를 좁혀가며 sum 계산
