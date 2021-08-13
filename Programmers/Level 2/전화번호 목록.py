@@ -61,5 +61,6 @@ def solution(phone_book):
 
     return True
 
+
 phone_book = ["113", "12", "724", "78399", "7242", "72420"]
 print(solution(phone_book))

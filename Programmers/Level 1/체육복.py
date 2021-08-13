@@ -33,11 +33,14 @@ def binary_search(nums, target) -> int:
 
 
 def solution(n, lost, reserve):
-    answer = n - len(lost)
-
+    # 교집합 제거 및 정렬
+    lost, reserve = list(set(lost) - set(reserve)
+                         ), list(set(reserve) - set(lost))
     lost.sort()
     reserve.sort()
+    answer = n - len(lost)
 
+    # 인접한 여벌의 옷이 있는지 이진검색을 이용해 검사
     for i in lost:
         result1 = binary_search(reserve, i - 1)
         result2 = binary_search(reserve, i + 1)
@@ -53,7 +56,7 @@ def solution(n, lost, reserve):
 
 
 n = 10
-lost = [5, 7, 9]
+lost = [1, 2, 3, 5, 7, 9]
 reserve = [1, 2, 3, 4, 6, 8]  # 10
 
 print(solution(n, lost, reserve))
